@@ -2,9 +2,12 @@ package com.spr.cruddemo.dao;
 
 import com.spr.cruddemo.entity.Student;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Repository
 public class StudentDAOImpl implements StudentDAO {
@@ -24,7 +27,7 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public Student getStudent(int id) {
+    public Student findStudentById(int id) {
         return mEntityManager.find(Student.class, id);
     }
 
@@ -34,5 +37,16 @@ public class StudentDAOImpl implements StudentDAO {
         Student student = new Student();
         student.setId(id);
         mEntityManager.remove(student);
+    }
+
+    @Override
+    public List<Student> findAll() {
+        // Create query for get all Student in the DB.
+//        TypedQuery<Student> query = mEntityManager.createQuery("FROM Student", Student.class);
+
+        TypedQuery<Student> query = mEntityManager.createQuery("FROM Student order by lastName desc", Student.class);
+
+        // Return query results.
+        return query.getResultList();
     }
 }
