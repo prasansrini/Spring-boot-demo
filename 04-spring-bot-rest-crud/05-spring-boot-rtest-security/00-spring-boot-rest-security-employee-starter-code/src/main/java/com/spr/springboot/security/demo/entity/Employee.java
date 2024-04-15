@@ -1,4 +1,4 @@
-package com.luv2code.springboot.cruddemo.entity;
+package com.spr.springboot.security.demo.entity;
 
 import jakarta.persistence.*;
 

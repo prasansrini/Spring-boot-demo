@@ -1,6 +1,6 @@
-package com.luv2code.springboot.cruddemo.service;
+package com.spr.springboot.security.demo.service;
 
-import com.luv2code.springboot.cruddemo.entity.Employee;
+import com.spr.springboot.security.demo.entity.Employee;
 
 import java.util.List;
 
