@@ -21,6 +21,9 @@ public class EmployeeRestController {
     // expose "/employees" and return a list of employees
     @GetMapping("/employees")
     public List<Employee> findAll() {
+
+        // Check the auth token.
+
         return employeeService.findAll();
     }
 
