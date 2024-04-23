@@ -3,13 +3,14 @@ package com.spr.thymeleaf.ThymeLeafSample.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HelloWorldController {
 
-    @RequestMapping("/showForm")
+    @GetMapping("/showForm")
     public String showForm() {
         return "form";
     }
@@ -36,7 +37,7 @@ public class HelloWorldController {
         return "helloworld-new";
     }
 
-    @RequestMapping("/processFormWithReq")
+    @GetMapping("/processFormWithReq")
     public String processInformation(@RequestParam("studentName") String studentName, Model model) {
         // Convert the data to upper case.
         studentName = studentName.toUpperCase();
