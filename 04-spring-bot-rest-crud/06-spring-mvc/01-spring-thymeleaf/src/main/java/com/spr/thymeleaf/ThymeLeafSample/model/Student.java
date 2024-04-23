@@ -1,5 +1,7 @@
 package com.spr.thymeleaf.ThymeLeafSample.model;
 
+import java.util.List;
+
 public class Student {
     private String firstName;
 
@@ -9,12 +11,12 @@ public class Student {
 
     private String favLanguage;
 
-    private String favOSs;
+    private List<String> favOSs;
 
     public Student() {
     }
 
-    public Student(String firstName, String lastName, String country, String favLanguage, String favOSs) {
+    public Student(String firstName, String lastName, String country, String favLanguage, List<String> favOSs) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.country = country;
@@ -54,16 +56,16 @@ public class Student {
         this.favLanguage = favLanguage;
     }
 
-    public String getFavOSs() {
+    public List<String> getFavOSs() {
         return favOSs;
     }
 
-    public void setFavOSs(String favOSs) {
+    public void setFavOSs(List<String> favOSs) {
         this.favOSs = favOSs;
     }
 
     @Override
     public String toString() {
-        return "Student{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", country='" + country + '\'' + ", favLanguage='" + favLanguage + '\'' + ", favOSs='" + favOSs + '\'' + '}';
+        return "Student{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", country='" + country + '\'' + ", favLanguage='" + favLanguage + '\'' + ", favOSs=" + favOSs + '}';
     }
 }
