@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -37,7 +38,7 @@ public class HelloWorldController {
         return "helloworld-new";
     }
 
-    @GetMapping("/processFormWithReq")
+    @PostMapping("/processFormWithReq")
     public String processInformation(@RequestParam("studentName") String studentName, Model model) {
         // Convert the data to upper case.
         studentName = studentName.toUpperCase();
