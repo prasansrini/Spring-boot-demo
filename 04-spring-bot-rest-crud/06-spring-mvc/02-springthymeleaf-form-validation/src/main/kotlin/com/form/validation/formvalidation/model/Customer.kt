@@ -9,6 +9,7 @@ class Customer {
 	@Size(min = 1, message = "is required")
 	var lastName: String? = ""
 
+	@NotNull(message = "is required")
 	@Min(value = 0, message = "must be greater than zero")
 	@Max(value = 10, message = "must be lesser than ten")
 	var freePasses: Int? = null

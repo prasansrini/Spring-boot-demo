@@ -25,7 +25,7 @@
     <!-- Display error if the freePasses is not between 0 and 10. -->
     <br><br>
 
-    Free passes: <input type="text" th:field="*{freePasses}">
+    Free passes(*): <input type="text" th:field="*{freePasses}">
     <span th:if="${#fields.hasErrors('freePasses')}"
           th:errors="*{freePasses}"
           class="error"></span>
