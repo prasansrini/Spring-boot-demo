@@ -15,14 +15,30 @@
 
     <br><br>
 
-    Last name: <input type="text" th:field="*{lastName}" class="textinput">
+    Last name(*): <input type="text" th:field="*{lastName}" class="textinput">
 
     <!-- Display error message f last name is empty. -->
     <span th:if="${#fields.hasErrors('lastName')}"
           th:errors="*{lastName}"
           class="error"></span>
 
+    <!-- Display error if the freePasses is not between 0 and 10. -->
     <br><br>
+
+    Free passes: <input type="text" th:field="*{freePasses}">
+    <span th:if="${#fields.hasErrors('freePasses')}"
+          th:errors="*{freePasses}"
+          class="error"></span>
+
+    <br><br>
+
+    Postal code: <input type="text" th:field="*{postalCode}">
+    <span th:if="${#fields.hasErrors('postalCode')}"
+          th:errors="*{postalCode}"
+          class="error"></span>
+
+    <br><br>
+
     <input type="submit" value="Submit">
 </form>
 </body>
