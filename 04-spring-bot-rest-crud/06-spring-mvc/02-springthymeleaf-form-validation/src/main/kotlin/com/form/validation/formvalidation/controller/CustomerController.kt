@@ -33,6 +33,8 @@ class CustomerController {
 	public fun processForm(
 		@Valid @ModelAttribute("customer") customer: Customer, bindingResult: BindingResult
 	): String {
+		println("Binding result: $bindingResult")
+
 		return if (bindingResult.hasErrors()) "customer-form" else "customer-confirmation"
 	}
 }
